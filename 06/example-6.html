@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Accordian</title>
+</head>
+<body>
+	<div class="section">
+		<a class="acc_head">
+			Title
+		</a>
+
+		<div class="acc_body">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae velit ducimus, consequatur id animi facilis dolor doloremque corrupti impedit odio cum, sed quam deserunt ipsam quia consequuntur perspiciatis repudiandae voluptatibus.
+			<div class="acc_next">
+				Next
+			</div>
+		</div>
+
+	</div>
+	<div class="section">
+		<a class="acc_head">
+			Title 1
+		</a>
+
+		<div class="acc_body">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae velit ducimus, consequatur id animi facilis dolor doloremque corrupti impedit odio cum, sed quam deserunt ipsam quia consequuntur perspiciatis repudiandae voluptatibus.
+			<div class="acc_next">
+				Next
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<a class="acc_head">
+			Title 2
+		</a>
+
+		<div class="acc_body">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae velit ducimus, consequatur id animi facilis dolor doloremque corrupti impedit odio cum, sed quam deserunt ipsam quia consequuntur perspiciatis repudiandae voluptatibus.
+			<div class="acc_next">
+				Next
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<a class="acc_head">
+			Title 3
+		</a>
+
+		<div class="acc_body">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae velit ducimus, consequatur id animi facilis dolor doloremque corrupti impedit odio cum, sed quam deserunt ipsam quia consequuntur perspiciatis repudiandae voluptatibus.
+
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+		jQuery(document).ready(function($) {
+			jQuery('.acc_body').hide();
+			jQuery('.acc_body').first().show();
+			jQuery('.acc_head').click(function(event) {
+				jQuery('.acc_head').removeClass('active');
+				event.preventDefault();
+				jQuery('.acc_body').slideUp(300);
+
+				if (jQuery(this).next('.acc_body').is(':visible')) {} else {
+					jQuery(this).next('.acc_body').slideDown(300);
+					jQuery(this).addClass('active');
+				}
+			});
+
+			jQuery('.acc_next').click(function(event) {
+				jQuery('.acc_body').slideUp(300);
+				jQuery('.acc_head').removeClass('active');
+				jQuery(this).parent().parent().next().children('.acc_body').slideDown(300);
+				jQuery(this).parent().parent().next().children('.acc_head').addClass('active');
+			});
+		});
+	</script>
+</body>
+</html>

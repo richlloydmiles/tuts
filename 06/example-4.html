@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Introduction to jQuery</title>
+</head>
+<body>
+	<style>
+
+		h2 {
+			margin-top:60px;
+			background:coral;
+			color:white;
+			padding:30px;
+		}
+	</style>
+
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<h2 id="heading">
+		Example 4
+		WHAT ABOUT EVENTS!!!?!
+	</h2>
+	<hr>
+
+	<script>
+		jQuery(document).ready(function($) {
+			jQuery('h2').click(function() {
+				console.log('hi there');
+			});
+		});
+
+		// jQuery(document).ready(function($) {
+		// 	jQuery('h2').hover(function() {
+		// 		console.log('on hover!');
+		// 	}, function() {
+		// 		console.log('off hover!');
+		// 	});
+		// });
+	</script>
+
+
+</body>
+</html>
