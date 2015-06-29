@@ -19,7 +19,6 @@
 	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<a class="heading">
 		Example 4
-		
 	</a>
 	<p class="body">
 		WHAT ABOUT Moving Around and this <br>
@@ -29,7 +28,6 @@
 
 	<a class="heading">
 		Example 4
-		
 		<p>
 			This is a paragraph in the heading
 		</p>
@@ -43,7 +41,7 @@
 	<script>
 		// jQuery(document).ready(function($) {
 		// 	jQuery('.heading').click(function() {
-		// 		jQuery('.body').slideUp(300);
+		// 		jQuery('.body').slideUp('slow');
 		// 	});
 		// });
 
@@ -58,15 +56,18 @@
 // 		// jQuery('.heading>p').css('background' , 'green');
 // 		// 
 // 		// 
-// 		// jQuery('.heading').children('p').css('background' , 'green');
+// 		jQuery('.heading').children('p').css('background' , 'green');
 // 	});
 // });
-// jQuery(document).ready(function($) {
-// 	jQuery('p').click(function() {
-// 		// jQuery(this).parent('.heading').css('background' , 'blue');
-// 		// jQuery(this).parent('.heading').css('background' , jQuery(this).css('color'));
-// 	});
-// });
+// 
+jQuery(document).ready(function($) {
+	jQuery('p').click(function() {
+		// jQuery(this).parent('.heading').css('background' , 'blue');
+		jQuery(this).parent('.heading').css('background' , 
+			jQuery(this).css('color'));
+		console.log(jQuery(this).css('height'));
+	});
+});
 </script>
 
 

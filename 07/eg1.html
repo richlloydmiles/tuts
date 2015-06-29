@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX</title>
+</head>
+<body>
+
+	<a id="load_content">Load Content</a>
+	<div id="content">
+		
+	</div>
+	<script src="jquery.min.js"></script>
+	<script>
+		jQuery(document).ready(function($) {
+			jQuery('#load_content').click(function(event) {
+				jQuery.ajax({
+					url: 'content.html',
+					type: 'GET',
+				})
+				.done(function(data) {
+					jQuery('#content').append(data);
+					console.log("success");
+					console.log(data);
+
+				})
+				.fail(function() {
+					console.log("error");
+				})
+				.always(function() {
+					console.log("complete");
+				});
+				
+			});
+		});
+	</script>
+</body>
+</html>
